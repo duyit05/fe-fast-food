@@ -1,0 +1,81 @@
+/* src/components/CarouselHome.css */
+
+#carousel-home {
+  position: relative;
+}
+
+.slide-background {
+  background-size: cover;
+  background-position: center;
+  height: 450px;
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* overlay đen */
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.overlay.align-right {
+  justify-content: flex-end;
+  padding-right: 10%;
+  text-align: right;
+}
+
+.slide-text {
+  z-index: 2;
+  max-width: 600px;
+}
+
+.slide-text h2 {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.slide-text p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.btn_1 {
+  display: inline-block;
+  background: #ff5a5f;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn_1:hover {
+  background: #e14c4c;
+}
+
+/* Ẩn mũi tên điều hướng */
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+
+/* ✅ Custom pagination (3 nút tròn) */
+.swiper-pagination-bullet {
+  background: white;
+  opacity: 0.6;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ff5a5f;
+  opacity: 1;
+}

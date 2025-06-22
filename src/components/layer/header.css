@@ -1,0 +1,150 @@
+
+
+/* Account */
+.dropdown.dropdown-access {
+  position: relative;
+  display: inline-block;
+}
+
+
+.dropdown-access .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 200px;
+  padding: 15px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.dropdown-access:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 12px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  /* background-color: #f0f0f0; */
+  color: #ff5a5f;
+}
+
+.btn_1 {
+  display: inline-block;
+  background: #ff5a5f;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.btn_1:hover {
+  background: #e14c4c;
+}
+
+.dropdown-cart .dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: white;
+  width: 280px;
+  padding: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-radius: 4px;
+}
+
+.dropdown-cart:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.dropdown-menu ul li a {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-menu figure {
+  margin: 0;
+  margin-right: 10px;
+}
+
+.dropdown-menu strong span {
+  display: block;
+  font-size: 14px;
+  color: #333;
+}
+
+.dropdown-menu .action {
+  color: #999;
+  margin-left: 5px;
+}
+
+.total_drop {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.total_drop .clearfix {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.btn_1 {
+  display: inline-block;
+  background: #ff5a5f;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.btn_1.outline {
+  background: transparent;
+  border: 1px solid #ff5a5f;
+  color: #ff5a5f;
+}
+
+.btn_1:hover {
+  background-color: #e14c4c;
+}
+/* 
+span {
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: inline-block;
+} */
+
+.active {
+  /* background-color: yellow; */
+  /* color: red; */
+}
+
+
+
+

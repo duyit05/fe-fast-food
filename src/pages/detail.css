@@ -1,0 +1,58 @@
+.carousel-container {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+/* Nút trái/phải ẩn mặc định */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #207efc;
+  color: white;
+  width: 35px;
+  height: 125px;
+  display: none; /* Ẩn mặc định */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.arrow.left {
+  left: 0;
+}
+
+.arrow.right {
+  right: 0;
+}
+
+/* Khi hover vào carousel thì hiện nút */
+.carousel-container:hover .arrow {
+  display: flex;
+}
+
+.image-box {
+  border: 1px solid #ddd;
+  margin: 5px;
+  padding: 10px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.image-box img {
+  height: 100px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.image-box.active {
+  border: 2px solid #007bff;
+  box-shadow: 0 0 5px #007bff;
+}
