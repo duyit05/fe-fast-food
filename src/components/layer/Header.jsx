@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
-const Header = () => {
+const Header = ({ onSearch }) => {
+  const [input, setInput] = useState("");
+
+  // debounce: đợi 500ms sau khi người dùng ngừng gõ mới gọi onSearch
+  useEffect(() => {
+    const delay = setTimeout(() => {
+      onSearch(input.trim());
+    }, 500); // 500ms
+
+    return () => clearTimeout(delay); // clear nếu user gõ tiếp
+  }, [input]);
   return (
     <div>
       <header className="version_1">
@@ -42,9 +52,9 @@ const Header = () => {
                   </div>
                   <ul>
                     <li className="">
-                      <a href="/" className="show-submenu">
+                      <Link to="/home" className="show-submenu">
                         Home
-                      </a>
+                      </Link>
                     </li>
                     <li className="megamenu">
                       <a href="#0" className="show-submenu-mega">
@@ -88,8 +98,7 @@ const Header = () => {
                 <nav className="categories menu">
                   <ul className="clearfix">
                     <li>
-                      <span
-                      >
+                      <span>
                         <a href="#12">
                           <span className="hamburger hamburger--spin">
                             <span className="hamburger-box">
@@ -99,180 +108,168 @@ const Header = () => {
                           Categories
                         </a>
                       </span>
-                          <div
-                            id="menu"
-                          >
+                      <div id="menu">
+                        <ul>
+                          <li>
+                            <span>
+                              <a href="#0">Collections</a>
+                            </span>
                             <ul>
                               <li>
-                                <span>
-                                  <a href="#0">Collections</a>
-                                </span>
-                                <ul>
-                                  <li>
-                                    <a href="listing-grid-1-full.html">
-                                      Trending
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-grid-2-full.html">
-                                      Life style
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-grid-3.html">Running</a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-grid-4-sidebar-left.html">
-                                      Training
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-grid-5-sidebar-right.html">
-                                      View all Collections
-                                    </a>
-                                  </li>
-                                </ul>
+                                <a href="listing-grid-1-full.html">Trending</a>
                               </li>
                               <li>
-                                <span>
-                                  <a href="123">Men</a>
-                                </span>
-                                <ul>
-                                  <li>
-                                    <a href="listing-grid-6-sidebar-left.html">
-                                      Offers
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-grid-7-sidebar-right.html">
-                                      Shoes
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-row-1-sidebar-left.html">
-                                      Clothing
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-row-3-sidebar-left.html">
-                                      Accessories
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-row-4-sidebar-extended.html">
-                                      Equipment
-                                    </a>
-                                  </li>
-                                </ul>
+                                <a href="listing-grid-2-full.html">
+                                  Life style
+                                </a>
                               </li>
                               <li>
-                                <span>
-                                  <a href="123">Women</a>
-                                </span>
-                                <ul>
-                                  <li>
-                                    <a href="listing-grid-1-full.html">
-                                      Best Sellers
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-grid-2-full.html">
-                                      Clothing
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-grid-3.html">
-                                      Accessories
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-grid-4-sidebar-left.html">
-                                      Shoes
-                                    </a>
-                                  </li>
-                                </ul>
+                                <a href="listing-grid-3.html">Running</a>
                               </li>
                               <li>
-                                <span>
-                                  <a href="123">Boys</a>
-                                </span>
-                                <ul>
-                                  <li>
-                                    <a href="listing-grid-6-sidebar-left.html">
-                                      Easy On Shoes
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-grid-7-sidebar-right.html">
-                                      Clothing
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-row-3-sidebar-left.html">
-                                      Must Have
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-row-4-sidebar-extended.html">
-                                      All Boys
-                                    </a>
-                                  </li>
-                                </ul>
+                                <a href="listing-grid-4-sidebar-left.html">
+                                  Training
+                                </a>
                               </li>
                               <li>
-                                <span>
-                                  <a href="123">Girls</a>
-                                </span>
-                                <ul>
-                                  <li>
-                                    <a href="listing-grid-1-full.html">
-                                      New Releases
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-grid-2-full.html">
-                                      Clothing
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-grid-3.html">Sale</a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-grid-4-sidebar-left.html">
-                                      Best Sellers
-                                    </a>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li>
-                                <span>
-                                  <a href="123">Customize</a>
-                                </span>
-                                <ul>
-                                  <li>
-                                    <a href="listing-row-1-sidebar-left.html">
-                                      For Men
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-row-2-sidebar-right.html">
-                                      For Women
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-row-4-sidebar-extended.html">
-                                      For Boys
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="listing-grid-1-full.html">
-                                      For Girls
-                                    </a>
-                                  </li>
-                                </ul>
+                                <a href="listing-grid-5-sidebar-right.html">
+                                  View all Collections
+                                </a>
                               </li>
                             </ul>
-                          </div>
+                          </li>
+                          <li>
+                            <span>
+                              <a href="123">Men</a>
+                            </span>
+                            <ul>
+                              <li>
+                                <a href="listing-grid-6-sidebar-left.html">
+                                  Offers
+                                </a>
+                              </li>
+                              <li>
+                                <a href="listing-grid-7-sidebar-right.html">
+                                  Shoes
+                                </a>
+                              </li>
+                              <li>
+                                <a href="listing-row-1-sidebar-left.html">
+                                  Clothing
+                                </a>
+                              </li>
+                              <li>
+                                <a href="listing-row-3-sidebar-left.html">
+                                  Accessories
+                                </a>
+                              </li>
+                              <li>
+                                <a href="listing-row-4-sidebar-extended.html">
+                                  Equipment
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <span>
+                              <a href="123">Women</a>
+                            </span>
+                            <ul>
+                              <li>
+                                <a href="listing-grid-1-full.html">
+                                  Best Sellers
+                                </a>
+                              </li>
+                              <li>
+                                <a href="listing-grid-2-full.html">Clothing</a>
+                              </li>
+                              <li>
+                                <a href="listing-grid-3.html">Accessories</a>
+                              </li>
+                              <li>
+                                <a href="listing-grid-4-sidebar-left.html">
+                                  Shoes
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <span>
+                              <a href="123">Boys</a>
+                            </span>
+                            <ul>
+                              <li>
+                                <a href="listing-grid-6-sidebar-left.html">
+                                  Easy On Shoes
+                                </a>
+                              </li>
+                              <li>
+                                <a href="listing-grid-7-sidebar-right.html">
+                                  Clothing
+                                </a>
+                              </li>
+                              <li>
+                                <a href="listing-row-3-sidebar-left.html">
+                                  Must Have
+                                </a>
+                              </li>
+                              <li>
+                                <a href="listing-row-4-sidebar-extended.html">
+                                  All Boys
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <span>
+                              <a href="123">Girls</a>
+                            </span>
+                            <ul>
+                              <li>
+                                <a href="listing-grid-1-full.html">
+                                  New Releases
+                                </a>
+                              </li>
+                              <li>
+                                <a href="listing-grid-2-full.html">Clothing</a>
+                              </li>
+                              <li>
+                                <a href="listing-grid-3.html">Sale</a>
+                              </li>
+                              <li>
+                                <a href="listing-grid-4-sidebar-left.html">
+                                  Best Sellers
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <span>
+                              <a href="123">Customize</a>
+                            </span>
+                            <ul>
+                              <li>
+                                <a href="listing-row-1-sidebar-left.html">
+                                  For Men
+                                </a>
+                              </li>
+                              <li>
+                                <a href="listing-row-2-sidebar-right.html">
+                                  For Women
+                                </a>
+                              </li>
+                              <li>
+                                <a href="listing-row-4-sidebar-extended.html">
+                                  For Boys
+                                </a>
+                              </li>
+                              <li>
+                                <a href="listing-grid-1-full.html">For Girls</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
                     </li>
                   </ul>
                 </nav>
@@ -281,11 +278,11 @@ const Header = () => {
                 <div className="custom-search-input">
                   <input
                     type="text"
-                    placeholder="Search over 10.000 products"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    placeholder="Search food"
                   />
-                  <button type="submit">
-                    <i className="header-icon_search_custom" />
-                  </button>
+                  
                 </div>
               </div>
               <div className="col-xl-3 col-lg-2 col-md-3">

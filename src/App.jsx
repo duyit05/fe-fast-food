@@ -16,15 +16,19 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import WishList from "pages/WishList";
 import Order from "pages/Order";
 import LeaveReview from "pages/LeaveReview";
+import ScrollToTop from "utils/ScrollToTop";
+import { useState } from "react";
 
 function App() {
+  const [searchKeyword, setSearchKeyword] = useState("");
   return (
     <>
       <div id="page">
         <BrowserRouter>
-          <Header />
+          <ScrollToTop />
+          <Header onSearch={setSearchKeyword} />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home keyword={searchKeyword} />} />
             <Route path="/login" element={<Account />} />
             <Route path="/detail-product/:id" element={<ProductDetail />} />
             <Route path="/track-order" element={<TrackOrder />} />
@@ -33,7 +37,7 @@ function App() {
             <Route path="/help" element={<Help />} />
             <Route path="/not-found" element={<NotFound />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/review" element={<Review />}/>
+            <Route path="/review" element={<Review />} />
             <Route path="/wishlist" element={<WishList />} />
             <Route path="/my-order" element={<Order />} />
             <Route path="/leave-review" element={<LeaveReview />} />
